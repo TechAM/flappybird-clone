@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flappy Bird</title>
+
+	<script type="text/javascript" src="../js/paper-full.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			//randomly select bird
+			var bird_index = Math.floor(Math.random()*6);
+			var bird_sprite_url = "media/bird_sprites/bird_" + bird_index + ".png";
+			document.getElementById("bird_sprite").src = bird_sprite_url;
+		};
+
+	</script>
+	<script type="text/paperscript" src="js/flappy_bird_with_sprites.js" canvas="canvas"></script>
+
+
+	<style type="text/css">
+		#container{
+			text-align: center;
+		}
+		#canvas{
+			width: 80%;
+			height: 80%;
+			border: 2px solid black;
+		}
+
+		@media(max-width: 600px){
+			#container{
+				max-height: 100%;
+				max-width: auto;
+			}
+			#canvas{
+				width: auto;
+				max-height: 100%;
+			}
+		}
+		img{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<canvas id="canvas"></canvas>
+	</div>
+	<img id="bird_sprite">
+	<img id="pipe" src="media/pipe.png">
+	<img id="background" src="media/background.png">
+	<img id="scary_face" src="media/scary_face_2.jpg">
+</body>
+</html>
